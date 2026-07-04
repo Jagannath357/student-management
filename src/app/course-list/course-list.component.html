@@ -1,0 +1,130 @@
+<div [class.dark-theme]="isDarkMode" class="page-container">
+
+    <!-- Navigation Bar -->
+    <mat-toolbar color="primary" class="system-navbar mat-elevation-z3">
+        <span class="brand-logo" routerLink="/">
+            <mat-icon class="logo-icon">school</mat-icon> AdminPortal
+        </span>
+        <span class="spacer"></span>
+        <div class="nav-links">
+            <button mat-button routerLink="/">Home</button>
+            <button mat-button routerLink="/dashboard" class="active-link-btn">Dashboard</button>
+            <button mat-button routerLink="/students">Students</button>
+            <button mat-button routerLink="/courses">Courses</button>
+
+            <button mat-icon-button (click)="toggleTheme()" matTooltip="Toggle Interface Mode">
+                <mat-icon>{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
+            </button>
+
+            <button *ngIf="!checkLoginStatus()" mat-raised-button color="accent" class="auth-btn" routerLink="/login">
+                Sign In <mat-icon>login</mat-icon>
+            </button>
+            <button *ngIf="checkLoginStatus()" mat-raised-button color="warn" class="auth-btn" (click)="onLogout()">
+                Sign Out <mat-icon>logout</mat-icon>
+            </button>
+        </div>
+    </mat-toolbar>
+
+    <!-- Main View Body -->
+    <div class="course-wrapper">
+        <div class="course-header">
+            <h1>Course Catalog Directory</h1>
+            <p>Configure academic departments, manage maximum enrollment capacities, and create new programs.</p>
+        </div>
+
+        <!-- Action Bar -->
+        <div class="action-bar">
+            <mat-form-field appearance="outline" class="search-field">
+                <mat-label>Search Courses (Database Real-time)</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Computer Science" #input>
+                <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+
+            <div class="button-group">
+                <button mat-stroked-button color="primary" class="dashboard-redirect-btn" routerLink="/dashboard">
+                    <mat-icon>dashboard</mat-icon> Dashboard Home
+                </button>
+                <button mat-raised-button color="primary" class="add-btn" (click)="openCourseDialog()">
+                    <mat-icon>add</mat-icon> Add New Course
+                </button>
+            </div>
+        </div>
+
+        <!-- Data Table Section -->
+        <div class="mat-elevation-z8 table-container">
+            <table mat-table [dataSource]="dataSource" matSort>
+
+                <!-- ID Column -->
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                    <td mat-cell *matCellDef="let row"> #{{row.id}} </td>
+                </ng-container>
+
+                <!-- Course Name Column -->
+                <ng-container matColumnDef="courseName">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Course Program </th>
+                    <td mat-cell *matCellDef="let row" class="font-semibold"> {{row.courseName}} </td>
+                </ng-container>
+
+                <!-- Department Column -->
+                <ng-container matColumnDef="department">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Department </th>
+                    <td mat-cell *matCellDef="let row">
+                        <span class="badge-dept">{{row.department}}</span>
+                    </td>
+                </ng-container>
+
+                <!-- Duration Column -->
+                <ng-container matColumnDef="duration">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Duration </th>
+                    <td mat-cell *matCellDef="let row"> {{row.duration}} </td>
+                </ng-container>
+
+                <!-- Intake Capacity Column -->
+                <ng-container matColumnDef="intakeCapacity">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Max Intake </th>
+                    <td mat-cell *matCellDef="let row"> {{row.intakeCapacity}} Seats </td>
+                </ng-container>
+
+                <!-- Operations Column -->
+                <ng-container matColumnDef="actions">
+                    <th mat-header-cell *matHeaderCellDef> Operations </th>
+                    <td mat-cell *matCellDef="let row">
+                        <div class="operation-buttons">
+                            <button mat-icon-button color="accent" matTooltip="Edit Course"
+                                (click)="openCourseDialog(row)">
+                                <mat-icon>edit</mat-icon>
+                            </button>
+                            <button mat-icon-button color="warn" matTooltip="Delete Course" (click)="deleteCourse(row)">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </div>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="table-row"></tr>
+
+                <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell no-data-cell" colspan="6">
+                        <mat-icon class="no-data-icon">search_off</mat-icon>
+                        <p>No program configurations found matching criteria evaluation: "{{input.value}}"</p>
+                    </td>
+                </tr>
+            </table>
+
+            <mat-paginator [pageSizeOptions]="[5, 10, 25]" aria-label="Select page of courses"></mat-paginator>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="system-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Student Course Management Hub. All administration operations mapped securely.</p>
+            <div class="footer-links">
+                <a routerLink="/students">Registry Index</a>
+                <a routerLink="/courses">Course Tracks</a>
+            </div>
+        </div>
+    </footer>
+</div>

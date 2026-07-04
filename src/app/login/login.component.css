@@ -1,0 +1,192 @@
+/* ===================================================================
+   Global Page Reset Rules & Light Theme Presentation Layout
+   =================================================================== */
+.login-page-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 40px 24px;
+  transition: background 0.3s ease;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  border-radius: 16px !important;
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important;
+}
+
+.auth-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.auth-header ::v-deep .mat-card-header-text {
+  margin: 0 !important;
+}
+
+.brand-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+}
+
+.login-badge {
+  background-color: #e8eaf6;
+  color: #3f51b5;
+}
+
+.brand-badge mat-icon {
+  font-size: 28px;
+  width: 28px;
+  height: 28px;
+}
+
+.auth-card mat-card-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.auth-card mat-card-subtitle {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.auth-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 0 0 0 !important;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.auth-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 16px;
+  padding: 16px 0 0 0 !important;
+}
+
+.submit-btn {
+  height: 50px;
+  border-radius: 8px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+}
+
+.auth-navigation-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #64748b;
+  margin-top: 8px;
+}
+
+.auth-navigation-link button {
+  font-weight: 600;
+  margin-left: 4px;
+}
+
+/* ===================================================================
+   Vibrant, Colorful Cyberpunk Theme Overrides (.dark-theme)
+   =================================================================== */
+.dark-theme .auth-container {
+  background: linear-gradient(135deg, #090d16 0%, #0f1424 100%) !important;
+}
+
+.dark-theme .auth-card {
+  background-color: rgba(22, 30, 49, 0.85) !important;
+  border: 1px solid #1e293b !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+}
+
+.dark-theme .auth-card mat-card-title { 
+  color: #ffffff !important; 
+}
+
+.dark-theme .auth-card mat-card-subtitle { 
+  color: #94a3b8 !important; 
+}
+
+.dark-theme .auth-navigation-link span { 
+  color: #94a3b8 !important; 
+}
+
+/* -------------------------------------------------------------------
+   Exhaustive Angular Material Outlined Form Field Visibility Overrides
+   ------------------------------------------------------------------- */
+/* 1. Core Wrapper Background */
+.dark-theme ::v-deep .mat-mdc-text-field-wrapper {
+  background-color: #161f38 !important;
+}
+
+/* 2. Text typed inside the inputs */
+.dark-theme ::v-deep .mat-mdc-input-element {
+  color: #ffffff !important;
+  caret-color: #38bdf8 !important;
+}
+
+/* 3. Static Labels & Floating Input Titles */
+.dark-theme ::v-deep .mat-mdc-form-field-label,
+.dark-theme ::v-deep .mdc-floating-label,
+.dark-theme ::v-deep .mdc-floating-label span {
+  color: #94a3b8 !important;
+}
+
+/* 4. Active focused floating labels */
+.dark-theme ::v-deep .mat-form-field.mat-focused .mdc-floating-label,
+.dark-theme ::v-deep .mat-mdc-form-field.mat-focused .mdc-floating-label {
+  color: #38bdf8 !important;
+}
+
+/* 5. Suffix decoration controls icons */
+.dark-theme ::v-deep .mat-mdc-form-field-icon-suffix mat-icon,
+.dark-theme ::v-deep button[matSuffix] mat-icon {
+  color: #38bdf8 !important;
+}
+
+/* 6. Form Outline borders state rules */
+.dark-theme ::v-deep .mdc-notched-outline__leading,
+.dark-theme ::v-deep .mdc-notched-outline__notch,
+.dark-theme ::v-deep .mdc-notched-outline__trailing,
+.dark-theme ::v-deep .mat-mdc-form-field-outline {
+  border-color: #1e293b !important;
+}
+
+/* 7. Focused Form borders glow fields overrides */
+.dark-theme ::v-deep .mat-mdc-form-field.mat-focused .mat-mdc-text-field-wrapper .mdc-notched-outline * {
+  border-color: #4f46e5 !important;
+}
+
+/* Badge Layout Adjustments */
+.dark-theme .login-badge {
+  background-color: rgba(63, 81, 181, 0.2) !important;
+  color: #818cf8 !important;
+  border: 1px solid #3f51b5;
+}

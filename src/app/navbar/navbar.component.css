@@ -1,0 +1,44 @@
+.navbar-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-logo {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.logo-icon {
+    margin-right: 8px;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.auth-toggle-btn {
+    margin-left: 8px;
+    font-weight: 600;
+}
+
+/* ===================================================================
+   Neon Dark Theme Local Scoped Overrides
+   =================================================================== */
+.dark-theme .navbar-toolbar {
+    background-color: #0d1222 !important;
+    border-bottom: 1px solid #1e293b;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+}

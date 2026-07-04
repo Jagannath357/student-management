@@ -1,0 +1,28 @@
+<div [class.dark-theme]="isDarkMode" class="navbar-theme-wrapper">
+    <mat-toolbar color="primary" class="navbar-toolbar mat-elevation-z3">
+        <span class="brand-logo" routerLink="/">
+            <mat-icon class="logo-icon">school</mat-icon> EduManage
+        </span>
+        <span class="spacer"></span>
+        <div class="nav-links">
+            <button mat-button routerLink="/">Home</button>
+            <button *ngIf="checkLoginStatus()" mat-button routerLink="/dashboard">Dashboard</button>
+            <button *ngIf="checkLoginStatus()" mat-button routerLink="/students">Students</button>
+            <button *ngIf="checkLoginStatus()" mat-button routerLink="/courses">Courses</button>
+
+            <!-- Interactive Theme Switcher Action -->
+            <button mat-icon-button (click)="onToggleTheme()" matTooltip="Toggle Interface Mode">
+                <mat-icon>{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
+            </button>
+
+            <button *ngIf="!checkLoginStatus()" mat-raised-button color="accent" class="auth-toggle-btn"
+                routerLink="/login">
+                Sign In <mat-icon>login</mat-icon>
+            </button>
+            <button *ngIf="checkLoginStatus()" mat-raised-button color="warn" class="auth-toggle-btn"
+                (click)="onLogout()">
+                Sign Out <mat-icon>logout</mat-icon>
+            </button>
+        </div>
+    </mat-toolbar>
+</div>

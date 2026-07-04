@@ -1,0 +1,78 @@
+<div [class.dark-theme]="isDarkMode" class="home-page-root">
+    <app-navbar></app-navbar>
+
+    <div class="auth-container">
+        <mat-card class="auth-card mat-elevation-z4">
+            <mat-card-header class="auth-header">
+                <div class="brand-badge signup-badge">
+                    <mat-icon>person_add</mat-icon>
+                </div>
+                <mat-card-title>Create Admin Account</mat-card-title>
+                <mat-card-subtitle>Register system access permissions</mat-card-subtitle>
+            </mat-card-header>
+
+            <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
+                <mat-card-content class="auth-content">
+
+                    <!-- Username Input Field -->
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Username</mat-label>
+                        <input matInput formControlName="username" type="text" placeholder="Choose a username"
+                            required />
+                        <mat-icon matSuffix>person</mat-icon>
+                        <mat-error *ngIf="signupForm.get('username')?.hasError('required')">Username is
+                            required.</mat-error>
+                        <mat-error *ngIf="signupForm.get('username')?.hasError('minlength')">Username must be at least 4
+                            characters long.</mat-error>
+                    </mat-form-field>
+
+                    <!-- Password Input Field -->
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Password</mat-label>
+                        <input matInput formControlName="password" [type]="hidePassword ? 'password' : 'text'"
+                            placeholder="Create password" required />
+                        <button type="button" mat-icon-button matSuffix (click)="hidePassword = !hidePassword">
+                            <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <mat-error *ngIf="signupForm.get('password')?.hasError('required')">Password is
+                            required.</mat-error>
+                        <mat-error *ngIf="signupForm.get('password')?.hasError('minlength')">Password must be at least 6
+                            characters long.</mat-error>
+                    </mat-form-field>
+
+                    <!-- Confirm Password Input Field -->
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Confirm Password</mat-label>
+                        <input matInput formControlName="confirmPassword"
+                            [type]="hideConfirmPassword ? 'password' : 'text'" placeholder="Repeat password" required />
+                        <button type="button" mat-icon-button matSuffix
+                            (click)="hideConfirmPassword = !hideConfirmPassword">
+                            <mat-icon>{{hideConfirmPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <mat-error *ngIf="signupForm.get('confirmPassword')?.hasError('required')">Re-entering password
+                            is required.</mat-error>
+                        <mat-error
+                            *ngIf="signupForm.hasError('mismatch') && signupForm.get('confirmPassword')?.touched">
+                            Password strings do not match.
+                        </mat-error>
+                    </mat-form-field>
+
+                </mat-card-content>
+
+                <mat-card-actions class="auth-actions">
+                    <button mat-raised-button color="accent" class="submit-btn" type="submit"
+                        [disabled]="signupForm.invalid">
+                        Register Administrator <mat-icon>how_to_reg</mat-icon>
+                    </button>
+
+                    <div class="auth-navigation-link">
+                        <span>Already registered?</span>
+                        <button type="button" mat-button color="primary" routerLink="/login">Sign In</button>
+                    </div>
+                </mat-card-actions>
+            </form>
+        </mat-card>
+    </div>
+
+    <app-footer></app-footer>
+</div>

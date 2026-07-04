@@ -1,0 +1,95 @@
+<div [class.dark-theme]="isDarkMode" class="page-container">
+
+    <!-- Shared Global Header Navbar Component Module -->
+    <app-navbar></app-navbar>
+
+    <div class="detail-wrapper">
+        <!-- Context Header Navigation Bar Shortcut -->
+        <div class="back-navigation-bar">
+            <button mat-stroked-button color="primary" class="back-btn" routerLink="/students">
+                <mat-icon>arrow_back</mat-icon> Return to Student Registry
+            </button>
+        </div>
+
+        <!-- Active Loading Profile Condition Template Fallback Check -->
+        <div *ngIf="!student" class="loading-fallback-state">
+            <mat-spinner diameter="50"></mat-spinner>
+            <p>Retrieving student administrative profile data index record...</p>
+        </div>
+
+        <!-- Main Profile Card Layout Grid Interface -->
+        <div *ngIf="student" class="profile-layout-grid">
+
+            <!-- Left Box Card Grid Column Component: Profile Card Summary Info -->
+            <mat-card class="profile-card-badge mat-elevation-z3">
+                <mat-card-content class="badge-content">
+                    <div class="avatar-circle-wrapper">
+                        <mat-icon class="avatar-icon">account_circle</mat-icon>
+                    </div>
+                    <h2>{{ student.name }}</h2>
+                    <span class="badge-id-tag">Student ID: #{{ student.id }}</span>
+                    <div class="badge-course-pill">{{ student.course }}</div>
+                </mat-card-content>
+            </mat-card>
+
+            <!-- Right Box Card Grid Column Component: Explicit Detailed Registry Data fields -->
+            <mat-card class="profile-details-card mat-elevation-z3">
+                <mat-card-header class="details-card-header">
+                    <mat-card-title><mat-icon>assignment_ind</mat-icon> Registry Profile Metadata
+                        Information</mat-card-title>
+                </mat-card-header>
+
+                <mat-card-content class="details-grid-body">
+
+                    <div class="info-data-row">
+                        <div class="info-cell">
+                            <span class="cell-label"><mat-icon>badge</mat-icon> Legal Given Name</span>
+                            <span class="cell-value font-highlight">{{ student.name }}</span>
+                        </div>
+                        <div class="info-cell">
+                            <span class="cell-label"><mat-icon>email</mat-icon> Electronic Mail Address</span>
+                            <span class="cell-value">{{ student.email }}</span>
+                        </div>
+                    </div>
+
+                    <div class="info-data-row">
+                        <div class="info-cell">
+                            <span class="cell-label"><mat-icon>smartphone</mat-icon> Mobile Link Contact Trace</span>
+                            <span class="cell-value">{{ student.mobileNumber }}</span>
+                        </div>
+                        <div class="info-cell">
+                            <span class="cell-label"><mat-icon>class</mat-icon> Enrolled Academic Allocation
+                                Program</span>
+                            <span class="cell-value program-text-highlight">{{ student.course }}</span>
+                        </div>
+                    </div>
+
+                    <div class="info-data-row">
+                        <div class="info-cell">
+                            <span class="cell-label"><mat-icon>cake</mat-icon> Calendar Date of Birth</span>
+                            <span class="cell-value">{{ student.dateOfBirth | date:'longDate' }}</span>
+                        </div>
+                        <div class="info-cell">
+                            <span class="cell-label"><mat-icon>wc</mat-icon> Biological Gender Designation
+                                Identity</span>
+                            <span class="cell-value">{{ student.gender }}</span>
+                        </div>
+                    </div>
+
+                    <div class="info-data-row full-row-span">
+                        <div class="info-cell">
+                            <span class="cell-label"><mat-icon>home</mat-icon> Logged Permanent Residential Address
+                                Description</span>
+                            <span class="cell-value address-box">{{ student.address }}</span>
+                        </div>
+                    </div>
+
+                </mat-card-content>
+            </mat-card>
+
+        </div>
+    </div>
+
+    <!-- Shared Global Layout System Footer Component Module -->
+    <app-footer></app-footer>
+</div>

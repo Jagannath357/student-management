@@ -1,0 +1,147 @@
+<div [class.dark-theme]="isDarkMode" class="dashboard-page-container">
+
+    <!-- Embedded Header Navigation Bar Component -->
+    <mat-toolbar color="primary" class="dashboard-navbar mat-elevation-z3">
+        <span class="brand-logo" routerLink="/">
+            <mat-icon class="logo-icon">school</mat-icon> AdminPortal
+        </span>
+        <span class="spacer"></span>
+        <div class="nav-links">
+            <button mat-button routerLink="/">Home</button>
+            <button mat-button routerLink="/dashboard" class="active-link-btn">Dashboard</button>
+            <button mat-button routerLink="/students">Students</button>
+            <button mat-button routerLink="/courses">Courses</button>
+
+            <!-- Theme Switcher Button Control -->
+            <button mat-icon-button (click)="toggleTheme()" matTooltip="Toggle Interface Mode">
+                <mat-icon>{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
+            </button>
+
+            <!-- Conditional Auth Trigger Actions -->
+            <button *ngIf="!checkLoginStatus" mat-raised-button color="accent" class="auth-action-btn"
+                routerLink="/login">
+                Sign In <mat-icon>login</mat-icon>
+            </button>
+            <button *ngIf="checkLoginStatus" mat-raised-button color="warn" class="auth-action-btn"
+                (click)="onLogout()">
+                Sign Out <mat-icon>logout</mat-icon>
+            </button>
+        </div>
+    </mat-toolbar>
+
+    <!-- Main Component Main View Body -->
+    <div class="dashboard-wrapper">
+        <div class="dashboard-header">
+            <h1>Administrative Insights Dashboard</h1>
+            <p>Real-time statistical tracking and direct module management access portal.</p>
+        </div>
+
+        <!-- Row 1: Core Analytical Metrics Cards -->
+        <div class="dashboard-grid metrics-grid">
+            <mat-card class="metric-card students-card">
+                <mat-card-content>
+                    <div class="metric-icon-box">
+                        <mat-icon>people</mat-icon>
+                    </div>
+                    <div class="metric-data">
+                        <h3>Total Students</h3>
+                        <h2>{{totalStudents}}</h2>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+
+            <mat-card class="metric-card courses-card">
+                <mat-card-content>
+                    <div class="metric-icon-box">
+                        <mat-icon>menu_book</mat-icon>
+                    </div>
+                    <div class="metric-data">
+                        <h3>Total Courses</h3>
+                        <h2>{{totalCourses}}</h2>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+
+            <mat-card class="metric-card male-card">
+                <mat-card-content>
+                    <div class="metric-icon-box">
+                        <mat-icon>face</mat-icon>
+                    </div>
+                    <div class="metric-data">
+                        <h3>Male Students</h3>
+                        <h2>{{maleCount}}</h2>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+
+            <mat-card class="metric-card female-card">
+                <mat-card-content>
+                    <div class="metric-icon-box">
+                        <mat-icon>face_3</mat-icon>
+                    </div>
+                    <div class="metric-data">
+                        <h3>Female Students</h3>
+                        <h2>{{femaleCount}}</h2>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+        <hr class="section-divider" />
+
+        <!-- Row 2: Navigation Action Modules -->
+        <div class="navigation-section">
+            <h2>System Quick Actions</h2>
+            <div class="dashboard-grid actions-grid">
+
+                <!-- Students Management Navigation Card -->
+                <mat-card class="action-card navigation-target-card" routerLink="/students">
+                    <mat-card-content>
+                        <div class="action-card-body">
+                            <div class="action-icon-wrapper student-accent">
+                                <mat-icon>badge</mat-icon>
+                            </div>
+                            <div class="action-text">
+                                <h3>Manage Student Registry</h3>
+                                <p>Add new records, edit profiles, process deletions, or export global registry
+                                    documents[cite: 1].</p>
+                                <span class="action-link-label">Launch Directory
+                                    <mat-icon>arrow_right_alt</mat-icon></span>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+
+                <!-- Courses Directory Navigation Card -->
+                <mat-card class="action-card navigation-target-card" routerLink="/courses">
+                    <mat-card-content>
+                        <div class="action-card-body">
+                            <div class="action-icon-wrapper course-accent">
+                                <mat-icon>class</mat-icon>
+                            </div>
+                            <div class="action-text">
+                                <h3>Analyze Course Tracks</h3>
+                                <p>Review standard distribution data metrics, verify active enrollments, and coordinate
+                                    departmental catalogs[cite: 1].</p>
+                                <span class="action-link-label">Launch Catalog
+                                    <mat-icon>arrow_right_alt</mat-icon></span>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+
+    <!-- Embedded Structural Footer Component -->
+    <footer class="dashboard-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Student Course Management Hub. All administration operations mapped securely.</p>
+            <div class="footer-links">
+                <a routerLink="/students">Registry Index</a>
+                <a routerLink="/courses">Course Tracks</a>
+            </div>
+        </div>
+    </footer>
+
+</div>

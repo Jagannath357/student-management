@@ -1,0 +1,279 @@
+/* ===================================================================
+   Base Structure Alignment Layout Setup & Light Theme Variables Default
+   =================================================================== */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f8fafc;
+    color: #0f172a;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.detail-wrapper {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 24px;
+    box-sizing: border-box;
+}
+
+.back-navigation-bar {
+    margin-bottom: 28px;
+}
+
+.back-btn {
+    height: 48px;
+    padding: 0 20px !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+}
+
+.loading-fallback-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0;
+    color: #64748b;
+    gap: 16px;
+}
+
+/* Core Structural Grid Definition layers rules */
+.profile-layout-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 32px;
+    align-items: start;
+}
+
+@media (max-width: 900px) {
+    .profile-layout-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Left Summary Summary Badge Content Module Card */
+.profile-card-badge {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px !important;
+    padding: 32px 16px;
+}
+
+.badge-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.avatar-circle-wrapper {
+    color: #3f51b5;
+    margin-bottom: 16px;
+}
+
+.avatar-icon {
+    font-size: 96px;
+    width: 96px;
+    height: 96px;
+}
+
+.badge-content h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 6px 0;
+}
+
+.badge-id-tag {
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748b;
+    background-color: #f1f5f9;
+    padding: 4px 12px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.badge-course-pill {
+    background-color: #e0f2fe;
+    color: #0369a1;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid #bae6fd;
+}
+
+/* Right Core Metadata Panel Content Module Card */
+.profile-details-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px !important;
+    padding: 16px;
+}
+
+.details-card-header {
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 16px;
+    margin-bottom: 16px !important;
+}
+
+.details-card-header mat-card-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1e293b;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.details-card-header mat-card-title mat-icon {
+    color: #3f51b5;
+}
+
+.details-grid-body {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.info-data-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+@media (max-width: 600px) {
+    .info-data-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+.full-row-span {
+    grid-template-columns: 1fr;
+}
+
+.info-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.cell-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.cell-label mat-icon {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    color: #94a3b8;
+}
+
+.cell-value {
+    font-size: 15px;
+    font-weight: 500;
+    color: #334155;
+    background-color: #f8fafc;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid #f1f5f9;
+}
+
+.font-highlight {
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.program-text-highlight {
+    color: #0369a1;
+    font-weight: 600;
+    background-color: #f0f9ff;
+    border-color: #e0f2fe;
+}
+
+.address-box {
+    line-height: 1.6;
+}
+
+/* ===================================================================
+   Vibrant Neon Cyberpunk Theme Overrides Configuration (.dark-theme)
+   =================================================================== */
+.dark-theme {
+    background: linear-gradient(135deg, #090d16 0%, #0f1424 100%) !important;
+    color: #f1f5f9 !important;
+}
+
+.dark-theme .profile-card-badge,
+.dark-theme .profile-details-card {
+    background-color: rgba(22, 30, 49, 0.7) !important;
+    border: 1px solid #1e293b !important;
+    backdrop-filter: blur(8px);
+}
+
+.dark-theme .profile-card-badge {
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.15) !important;
+}
+
+.dark-theme .profile-details-card {
+    box-shadow: 0 0 20px rgba(2, 132, 199, 0.15) !important;
+}
+
+.dark-theme .badge-content h2 {
+    color: #ffffff;
+}
+
+.dark-theme .details-card-header {
+    border-bottom-color: #1e293b;
+}
+
+.dark-theme .details-card-header mat-card-title {
+    color: #ffffff;
+}
+
+.dark-theme .details-card-header mat-card-title mat-icon {
+    color: #818cf8;
+}
+
+.dark-theme .badge-id-tag {
+    background-color: #161f38;
+    color: #94a3b8;
+}
+
+.dark-theme .badge-course-pill {
+    background-color: rgba(2, 132, 199, 0.2);
+    color: #38bdf8;
+    border: 1px solid #0284c7;
+}
+
+/* Grid Text Value Containers Overrides for Dark Mode */
+.dark-theme .cell-value {
+    background-color: #111827;
+    color: #e2e8f0;
+    border-color: #1e293b;
+}
+
+.dark-theme .cell-label {
+    color: #94a3b8;
+}
+
+.dark-theme .font-highlight {
+    color: #818cf8;
+}
+
+.dark-theme .program-text-highlight {
+    color: #2dd4bf;
+    background-color: rgba(13, 148, 136, 0.15);
+    border-color: #0d9488;
+}

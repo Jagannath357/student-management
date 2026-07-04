@@ -1,0 +1,261 @@
+/* ===================================================================
+   Base Container Layout Structure & Light Theme Defaults
+   =================================================================== */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f8fafc;
+    color: #0f172a;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.system-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 24px !important;
+}
+
+.brand-logo {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    font-weight: 700;
+}
+
+.logo-icon {
+    margin-right: 8px;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.auth-btn {
+    margin-left: 8px;
+    font-weight: 600;
+}
+
+.student-wrapper {
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 24px;
+    box-sizing: border-box;
+}
+
+.student-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 8px 0;
+}
+
+.student-header p {
+    font-size: 15px;
+    color: #64748b;
+    margin: 0;
+}
+
+/* Control Input Elements Layout Alignment styling rule */
+.action-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    gap: 16px;
+}
+
+.search-field {
+    flex: 1;
+    max-width: 450px;
+}
+
+.button-group {
+    display: flex;
+    gap: 12px;
+}
+
+.add-btn,
+.dashboard-redirect-btn {
+    height: 52px;
+    padding: 0 24px !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+}
+
+/* Data Tables Layout Structure Settings */
+.table-container {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-mdc-header-cell {
+    background-color: #f8fafc !important;
+    color: #475569 !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    padding: 16px !important;
+}
+
+.mat-mdc-cell {
+    padding: 16px !important;
+    font-size: 14px;
+    color: #334155;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.table-row {
+    transition: background-color 0.2s ease;
+}
+
+.table-row:hover {
+    background-color: #f8fafc;
+}
+
+.font-semibold {
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.badge-course {
+    background-color: #e0f2fe;
+    color: #0369a1;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.operation-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.no-data-cell {
+    text-align: center;
+    padding: 48px !important;
+    color: #94a3b8;
+}
+
+.no-data-icon {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 12px;
+}
+
+/* Sticky Architecture Footer CSS rule */
+.system-footer {
+    background-color: #1e293b;
+    color: #94a3b8;
+    padding: 24px 0;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.footer-links a {
+    color: #f8fafc;
+    text-decoration: none;
+    margin-left: 20px;
+    opacity: 0.8;
+}
+
+/* ===================================================================
+   High-Contrast Colorful Cybersecurity Theme Configuration OVERRIDES
+   =================================================================== */
+.dark-theme {
+    background: linear-gradient(135deg, #090d16 0%, #0f1424 100%) !important;
+    color: #f1f5f9 !important;
+}
+
+.dark-theme .system-navbar {
+    background-color: #0d1222 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+.dark-theme .student-header h1 {
+    color: #ffffff;
+}
+
+.dark-theme .student-header p {
+    color: #94a3b8;
+}
+
+/* Structural Angular Material Context Field Forms overrides for dark display mode mapping */
+.dark-theme ::v-deep .mat-mdc-text-field-wrapper {
+    background-color: #161f38 !important;
+}
+
+.dark-theme ::v-deep .mat-mdc-form-field-label {
+    color: #94a3b8 !important;
+}
+
+.dark-theme ::v-deep .mat-mdc-input-element {
+    color: #ffffff !important;
+}
+
+/* High-Contrast Colorful Table Rows adjustments */
+.dark-theme .table-container {
+    background: #111827 !important;
+    border: 1px solid #1e293b;
+}
+
+.dark-theme .mat-mdc-header-cell {
+    background-color: #1f2937 !important;
+    color: #818cf8 !important;
+    border-bottom: 2px solid #3f51b5 !important;
+}
+
+.dark-theme .mat-mdc-cell {
+    color: #e2e8f0;
+    border-bottom: 1px solid #1e293b;
+}
+
+.dark-theme .table-row:hover {
+    background-color: #1f2937;
+}
+
+.dark-theme .font-semibold {
+    color: #818cf8;
+}
+
+/* Deep Indigo-Neon Badge Treatment rules context mapping */
+.dark-theme .badge-course {
+    background-color: rgba(79, 70, 229, 0.2);
+    color: #818cf8;
+    border: 1px solid #4f46e5;
+}
+
+.dark-theme .mat-mdc-paginator {
+    background-color: #111827 !important;
+    color: #94a3b8 !important;
+}
+
+.dark-theme .system-footer {
+    background-color: #060911;
+    border-top: 1px solid #1e293b;
+}

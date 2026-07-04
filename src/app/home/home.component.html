@@ -1,0 +1,85 @@
+<!-- Wrapper layer linked to dynamic dark theme variable broadcast -->
+<div [class.dark-theme]="isDarkMode" class="home-page-root">
+    <app-navbar></app-navbar>
+
+    <div class="landing-page-wrapper">
+        <!-- Hero Banner Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Streamline Your Academic Administration</h1>
+                <p>An all-in-one Student Course Management platform built for speed, tracking accuracy, and clean data
+                    organization[cite: 1].</p>
+                <div class="hero-actions">
+                    <button mat-raised-button color="accent" size="large" class="hero-cta-btn" routerLink="/login">
+                        Access Administrative Portal <mat-icon>arrow_forward</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="container">
+                <h2>About the System</h2>
+                <div class="section-divider"></div>
+                <p class="about-text">
+                    The Student Course Management System serves as an integrated hub enabling educational administrators
+                    to organize records, optimize course metrics, and manage student lifecycles seamlessly[cite: 1].
+                    With an emphasis on modern layout design and native validations, our platform scales administration
+                    seamlessly[cite: 1].
+                </p>
+            </div>
+        </section>
+
+        <!-- Platform Features Grid Section -->
+        <section class="features-section">
+            <div class="container">
+                <h2>Platform Features</h2>
+                <div class="section-divider"></div>
+
+                <div class="feature-grid">
+                    <mat-card class="feature-card metric-accent-card">
+                        <mat-card-header>
+                            <div mat-card-avatar class="feature-icon-box">
+                                <mat-icon>dashboard</mat-icon>
+                            </div>
+                            <mat-card-title>Metric Analytics</mat-card-title>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <p>Access high-level dashboards compiling real-time tracking metrics across total courses,
+                                active registrations, and exact demographics breakdown[cite: 1].</p>
+                        </mat-card-content>
+                    </mat-card>
+
+                    <mat-card class="feature-card crud-accent-card">
+                        <mat-card-header>
+                            <div mat-card-avatar class="feature-icon-box">
+                                <mat-icon>contacts</mat-icon>
+                            </div>
+                            <mat-card-title>Complete CRUD Module</mat-card-title>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <p>Easily execute deep Student tracking management including custom data mutations,
+                                searching operations, profile view states, and safe deletion cascades[cite: 1].</p>
+                        </mat-card-content>
+                    </mat-card>
+
+                    <mat-card class="feature-card secure-accent-card">
+                        <mat-card-header>
+                            <div mat-card-avatar class="feature-icon-box">
+                                <mat-icon>verified_user</mat-icon>
+                            </div>
+                            <mat-card-title>Secure Operations</mat-card-title>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <p>Protected data pipelines parsing manual user authentication directly against back-end
+                                system parameters, complete with dynamic layout notifications[cite: 1].</p>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <app-footer></app-footer>
+</div>
