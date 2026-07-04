@@ -101,17 +101,11 @@ export class StudentListComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
-  openStudentDialog(studentData?: Student): void {
-    const dialogRef = this.dialog.open(StudentDialogComponent, {
-      width: '600px',
-      disableClose: true,
-      data: studentData || null,
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      if (result) {
-        this.loadStudents();
-      }
+  openStudentDialog(student?: Student) {
+    this.dialog.open(StudentDialogComponent, {
+      width: '750px',
+      data: student,
+      panelClass: this.isDarkMode ? 'dark-dialog' : '',
     });
   }
 

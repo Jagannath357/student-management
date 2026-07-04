@@ -187,77 +187,87 @@ table {
     text-decoration: underline;
 }
 
-/* ===================================================================
-   Neon Dark Theme Variables & Styling Overrides
-   =================================================================== */
+/* ===========================
+   DARK THEME
+=========================== */
+
 .dark-theme {
-    background: linear-gradient(135deg, #090d16 0%, #0f1424 100%) !important;
-    color: #f1f5f9 !important;
+    background: #1f2937;
+    color: white;
 }
+
+/* Navbar */
 
 .dark-theme .system-navbar {
-    background-color: #0d1222 !important;
+    background: #111827 !important;
 }
 
+/* Heading */
+
 .dark-theme .course-header h1 {
-    color: #ffffff;
+    color: white;
 }
 
 .dark-theme .course-header p {
-    color: #94a3b8;
+    color: #d1d5db;
 }
 
-/* Dark Mode Input Elements Overrides */
-.dark-theme ::v-deep .mat-mdc-text-field-wrapper {
-    background-color: #161f38 !important;
+/* Search Box */
+
+.dark-theme .mat-mdc-text-field-wrapper {
+    background: white !important;
 }
 
-.dark-theme ::v-deep .mat-mdc-form-field-label {
-    color: #94a3b8 !important;
+.dark-theme input {
+    color: black !important;
 }
 
-.dark-theme ::v-deep .mat-mdc-input-element {
-    color: #ffffff !important;
+.dark-theme .mdc-floating-label {
+    color: #555 !important;
 }
 
-/* Dark Mode Colorful Data Table Layout Adjustments */
+.dark-theme mat-icon {
+    color: #555;
+}
+
+/* Table */
+
 .dark-theme .table-container {
-    background: #111827 !important;
-    border: 1px solid #1e293b;
+    background: #27374d;
+    border: none;
+}
+
+.dark-theme table {
+    background: #27374d;
+}
+
+.dark-theme .mat-mdc-header-row {
+    background: #34495e;
 }
 
 .dark-theme .mat-mdc-header-cell {
-    background-color: #1f2937 !important;
-    color: #38bdf8 !important;
-    border-bottom: 2px solid #0284c7 !important;
+    color: white !important;
+    background: #34495e !important;
 }
 
 .dark-theme .mat-mdc-cell {
-    color: #e2e8f0;
-    border-bottom: 1px solid #1e293b;
+    color: white !important;
 }
 
 .dark-theme .table-row:hover {
-    background-color: #1f2937;
-}
-
-.dark-theme .font-semibold {
-    color: #2dd4bf;
+    background: #3d566e;
 }
 
 .dark-theme .badge-dept {
-    background-color: rgba(13, 148, 136, 0.2);
-    color: #2dd4bf;
-    border: 1px solid #0d9488;
+    background: #2196f3;
+    color: white;
 }
 
 .dark-theme .mat-mdc-paginator {
-    background-color: #111827 !important;
-    color: #94a3b8 !important;
+    background: #27374d !important;
+    color: white;
 }
 
-/* System Footer Dark Mode Fixes */
 .dark-theme .system-footer {
-    background-color: #060911;
-    border-top: 1px solid #1e293b;
+    background: #111827;
 }

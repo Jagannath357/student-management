@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private apiUrl = 'http://localhost:8090/api'; // Pointing to port 8090
+  private apiUrl = 'https://student-management-backend-rh0k.onrender.com/api'; // Pointing to port 8090
 
   constructor(private http: HttpClient) {}
 

@@ -1,4 +1,188 @@
-/* You can add global styles to this file, and also import other style files */
+/* ==========================================================
+   GLOBAL DARK DIALOG THEME
+   Angular Material 15 (MDC)
+========================================================== */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* Dialog Container */
+
+.dark-dialog .mat-mdc-dialog-surface {
+    background: #1f2937 !important;
+    color: #ffffff !important;
+    border-radius: 12px;
+}
+
+/* ===========================
+   Material Theme Variables
+=========================== */
+
+.dark-dialog {
+
+    --mdc-filled-text-field-container-color: #ffffff;
+    --mdc-outlined-text-field-container-color: #ffffff;
+
+    --mdc-filled-text-field-input-text-color: #000000;
+    --mdc-outlined-text-field-input-text-color: #000000;
+
+    --mdc-filled-text-field-label-text-color: #555555;
+    --mdc-outlined-text-field-label-text-color: #555555;
+
+    --mdc-filled-text-field-focus-label-text-color: #1976d2;
+    --mdc-outlined-text-field-focus-label-text-color: #1976d2;
+
+    --mdc-outlined-text-field-outline-color: #90caf9;
+    --mdc-outlined-text-field-hover-outline-color: #42a5f5;
+    --mdc-outlined-text-field-focus-outline-color: #1976d2;
+
+}
+
+/* ===========================
+   Form Fields
+=========================== */
+
+.dark-dialog .mat-mdc-form-field {
+    width: 100%;
+}
+
+/* Background */
+
+.dark-dialog .mat-mdc-text-field-wrapper {
+    background: #ffffff !important;
+    border-radius: 8px;
+}
+
+/* Inputs */
+
+.dark-dialog input,
+.dark-dialog textarea,
+.dark-dialog .mat-mdc-input-element {
+
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+
+}
+
+/* Placeholder */
+
+.dark-dialog input::placeholder,
+.dark-dialog textarea::placeholder {
+
+    color: #777777 !important;
+
+}
+
+/* Floating Label */
+
+.dark-dialog .mdc-floating-label {
+
+    color: #555555 !important;
+
+}
+
+/* Outline */
+
+.dark-dialog .mdc-notched-outline__leading,
+.dark-dialog .mdc-notched-outline__notch,
+.dark-dialog .mdc-notched-outline__trailing {
+
+    border-color: #1976d2 !important;
+
+}
+
+/* ===========================
+   Select
+=========================== */
+
+.dark-dialog .mat-mdc-select-value-text {
+
+    color: #000000 !important;
+
+}
+
+.dark-dialog .mat-mdc-select-arrow {
+
+    color: #000000 !important;
+
+}
+
+/* Dropdown Panel */
+
+.dark-dialog .mat-mdc-select-panel {
+
+    background: #ffffff !important;
+
+}
+
+.dark-dialog .mat-mdc-option {
+
+    color: #000000 !important;
+
+}
+
+.dark-dialog .mat-mdc-option:hover {
+
+    background: #eeeeee !important;
+
+}
+
+/* ===========================
+   Datepicker
+=========================== */
+
+.dark-dialog .mat-datepicker-toggle,
+.dark-dialog .mat-mdc-form-field-icon-suffix,
+.dark-dialog .mat-mdc-icon-button {
+
+    color: #000000 !important;
+
+}
+
+/* ===========================
+   Radio Buttons
+=========================== */
+
+.dark-dialog .mat-mdc-radio-button label {
+
+    color: #ffffff !important;
+
+}
+
+/* ===========================
+   Error Messages
+=========================== */
+
+.dark-dialog .mat-mdc-form-field-error {
+
+    color: #ff5252 !important;
+
+}
+
+/* ===========================
+   Dialog Title
+=========================== */
+
+.dark-dialog .mat-mdc-dialog-title {
+
+    color: #ffffff !important;
+    font-weight: 600;
+
+}
+
+/* ===========================
+   Dialog Content
+=========================== */
+
+.dark-dialog .mat-mdc-dialog-content {
+
+    color: #ffffff !important;
+
+}
+
+/* ===========================
+   Dialog Buttons
+=========================== */
+
+.dark-dialog .mat-mdc-dialog-actions button {
+
+    color: #ffffff !important;
+
+}

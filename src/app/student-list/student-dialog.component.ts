@@ -116,6 +116,7 @@ import { CourseService, Course } from '../services/course.service';
           color="primary"
           [disabled]="studentForm.invalid"
           (click)="onSave()"
+          class="save-btn"
         >
           Save Configuration
         </button>
@@ -127,63 +128,39 @@ import { CourseService, Course } from '../services/course.service';
       .dialog-form-layout {
         display: flex;
         flex-direction: column;
-        gap: 8px;
-        padding-top: 12px !important;
+        gap: 16px;
       }
-      .full-width {
-        width: 100%;
-      }
+
       .form-row {
         display: flex;
         gap: 16px;
       }
+
       .form-row mat-form-field {
         flex: 1;
       }
-      .radio-group-container {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        padding-left: 4px;
-      }
-      .radio-label {
-        font-size: 14px;
-        color: #475569;
-        font-weight: 500;
+
+      .full-width {
+        width: 100%;
       }
 
-      /* ===================================================================
-         Contextual Dialog View Overrides Mapping (Neon Dark Theme Layer)
-         =================================================================== */
-      .dialog-dark-wrapper {
-        background-color: #111827;
-        color: #f1f5f9;
-        margin: -24px;
-        padding: 24px;
-        border-radius: 4px;
+      .radio-group-container {
+        display: flex;
+        align-items: center;
+        gap: 16px;
       }
-      .dialog-dark-wrapper .form-title {
-        color: #ffffff;
+
+      .form-title {
+        font-size: 24px;
+        font-weight: 600;
       }
-      .dialog-dark-wrapper ::v-deep .mat-mdc-text-field-wrapper {
-        background-color: #161f38 !important;
+      .cancel-btn {
+        color: white;
+        background-color: #27374d;
       }
-      .dialog-dark-wrapper ::v-deep .mat-mdc-form-field-label {
-        color: #94a3b8 !important;
-      }
-      .dialog-dark-wrapper ::v-deep .mat-mdc-input-element,
-      .dialog-dark-wrapper ::v-deep .mat-mdc-select-value {
-        color: #ffffff !important;
-      }
-      .dialog-dark-wrapper .radio-label {
-        color: #94a3b8;
-      }
-      .dialog-dark-wrapper ::v-deep .mat-mdc-radio-button {
-        color: #e2e8f0 !important;
-      }
-      .dialog-dark-wrapper .cancel-btn {
-        color: #94a3b8;
+      .save-btn {
+        color: white;
+        background-color: #09489f;
       }
     `,
   ],

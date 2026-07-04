@@ -85,16 +85,11 @@ export class CourseListComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
-  openCourseDialog(courseData?: Course): void {
-    const dialogRef = this.dialog.open(CourseDialogComponent, {
-      width: '500px',
-      disableClose: true,
-      data: courseData || null,
-      panelClass: this.isDarkMode ? 'dark-dialog-panel' : 'light-dialog-panel',
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      if (result) this.loadCourses();
+  openCourseDialog(course?: Course): void {
+    this.dialog.open(CourseDialogComponent, {
+      width: '700px',
+      data: course,
+      panelClass: this.isDarkMode ? 'dark-dialog' : '',
     });
   }
 

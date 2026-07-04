@@ -155,82 +155,120 @@
     color: #e91e63;
 }
 
-/* ===================================================================
-   Neon Dark Theme Presentation Overrides
-   =================================================================== */
+/* ==========================================================
+   DARK THEME
+========================================================== */
+
 .dark-theme .landing-page-wrapper {
-    background-color: #090d16;
+    min-height: 100%;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
 }
+
+/* Hero */
 
 .dark-theme .hero-section {
-    background: linear-gradient(135deg, #070a14 0%, #0d1326 100%) !important;
-    border-bottom: 1px solid #1e293b;
+
+    background: transparent;
+    color: #fff;
 }
 
-.dark-theme .about-section {
-    background-color: #0f1424;
+.dark-theme .hero-content h1 {
+    color: #fff;
 }
 
-.dark-theme .about-section h2 {
-    color: #ffffff;
-}
-
-.dark-theme .about-text {
-    color: #94a3b8;
+.dark-theme .hero-content p {
+    color: #cbd5e1;
 }
 
 .dark-theme .section-divider {
-    background-color: #6366f1;
+    background: #60a5fa;
 }
 
+/* About */
+
+.dark-theme .about-section {
+
+    background: transparent;
+}
+
+.dark-theme .about-section h2 {
+    color: #fff;
+}
+
+.dark-theme .about-text {
+    color: #cbd5e1;
+}
+
+/* Features */
+
 .dark-theme .features-section {
-    background-color: #090d16;
+
+    background: transparent;
 }
 
 .dark-theme .features-section h2 {
-    color: #ffffff;
+    color: #fff;
 }
 
 .dark-theme .feature-card {
-    background-color: rgba(22, 30, 49, 0.7) !important;
-    border: 1px solid #1e293b !important;
-    backdrop-filter: blur(10px);
+
+    background: #1e293b !important;
+
+    border: 1px solid #475569 !important;
+
+    color: #fff;
+
+    transition: .3s;
+}
+
+.dark-theme .feature-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .35);
 }
 
 .dark-theme .feature-card mat-card-title {
-    color: #ffffff;
+
+    color: #fff;
 }
 
 .dark-theme .feature-card p {
-    color: #94a3b8;
+
+    color: #cbd5e1;
 }
+
+/* Accent Cards */
 
 .dark-theme .metric-accent-card {
-    border-top: 4px solid #4f46e5 !important;
-    box-shadow: 0 0 15px rgba(79, 70, 229, 0.15) !important;
-}
 
-.dark-theme .metric-accent-card .feature-icon-box {
-    background-color: rgba(79, 70, 229, 0.2);
-    color: #818cf8;
+    border-top: 4px solid #3b82f6 !important;
 }
 
 .dark-theme .crud-accent-card {
-    border-top: 4px solid #0d9488 !important;
-    box-shadow: 0 0 15px rgba(13, 148, 136, 0.15) !important;
-}
 
-.dark-theme .crud-accent-card .feature-icon-box {
-    background-color: rgba(13, 148, 136, 0.2);
-    color: #2dd4bf;
+    border-top: 4px solid #14b8a6 !important;
 }
 
 .dark-theme .secure-accent-card {
-    border-top: 4px solid #db2777 !important;
-    box-shadow: 0 0 15px rgba(219, 39, 119, 0.15) !important;
+
+    border-top: 4px solid #ec4899 !important;
+}
+
+.dark-theme .metric-accent-card .feature-icon-box {
+
+    background: #1d4ed8;
+    color: white;
+}
+
+.dark-theme .crud-accent-card .feature-icon-box {
+
+    background: #0f766e;
+    color: white;
 }
 
 .dark-theme .secure-accent-card .feature-icon-box {
-    background-color: rgba(219, 39, 119, 0.2);
-    color: #f472b6;
+
+    background: #be185d;
+    color: white;
 }

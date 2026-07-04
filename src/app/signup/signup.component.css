@@ -1,30 +1,28 @@
-/* ===================================================================
-   Global Page Reset Rules & Light Theme Presentation Layout
-   =================================================================== */
-.signup-page-root {
+/* ==========================================================
+   PAGE LAYOUT
+========================================================== */
+
+.login-page-root {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
 .auth-container {
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1;
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-    padding: 40px 24px;
-    transition: background 0.3s ease;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #eef2ff, #f8fafc);
+    transition: .3s;
 }
 
 .auth-card {
     width: 100%;
-    max-width: 440px;
-    border-radius: 16px !important;
+    max-width: 450px;
+    border-radius: 18px !important;
     padding: 28px;
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important;
 }
 
 .auth-header {
@@ -32,162 +30,222 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
-.auth-header ::v-deep .mat-card-header-text {
+.auth-header .mat-mdc-card-header-text {
     margin: 0 !important;
 }
 
 .brand-badge {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
     display: flex;
-    align-items: center;
     justify-content: center;
-    width: 52px;
-    height: 52px;
-    border-radius: 14px;
-    margin-bottom: 12px;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
-.signup-badge {
-    background-color: #e0f2fe;
-    color: #0369a1;
+.login-badge {
+    background: #e8eaf6;
+    color: #3f51b5;
 }
 
 .brand-badge mat-icon {
-    font-size: 28px;
-    width: 28px;
-    height: 28px;
-}
-
-.auth-card mat-card-title {
-    font-size: 22px;
-    font-weight: 700;
-    color: #0f172a;
-    margin-bottom: 4px;
-}
-
-.auth-card mat-card-subtitle {
-    font-size: 13px;
-    color: #64748b;
-}
-
-.auth-content {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    padding: 12px 0 0 0 !important;
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
 }
 
 .full-width {
     width: 100%;
 }
 
+.auth-content {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
 .auth-actions {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    gap: 16px;
-    padding: 16px 0 0 0 !important;
+    gap: 18px;
+    margin-top: 20px;
 }
 
 .submit-btn {
-    height: 50px;
-    border-radius: 8px !important;
-    font-size: 16px !important;
-    font-weight: 600 !important;
+    height: 48px;
 }
 
 .auth-navigation-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    color: #64748b;
-    margin-top: 8px;
+    text-align: center;
 }
 
-.auth-navigation-link button {
-    font-weight: 600;
-    margin-left: 4px;
+.auth-navigation-link span {
+    margin-right: 5px;
 }
 
-/* ===================================================================
-   Vibrant, Colorful Cyberpunk Theme Overrides (.dark-theme)
-   =================================================================== */
+/* ==========================================================
+   DARK THEME
+========================================================== */
+
 .dark-theme .auth-container {
-    background: linear-gradient(135deg, #090d16 0%, #0f1424 100%) !important;
+
+    background:
+        radial-gradient(circle at top right, #3b82f6 0%, transparent 35%),
+        radial-gradient(circle at bottom left, #9333ea 0%, transparent 30%),
+        linear-gradient(135deg, #0f172a, #111827, #1e293b);
+
 }
+
+/* Card */
 
 .dark-theme .auth-card {
-    background-color: rgba(22, 30, 49, 0.85) !important;
-    border: 1px solid #1e293b !important;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+
+    background: rgba(30, 41, 59, .92);
+
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    color: white;
+
 }
 
-.dark-theme .auth-card mat-card-title {
-    color: #ffffff !important;
+/* Title */
+
+.dark-theme mat-card-title {
+
+    color: white !important;
+
 }
 
-.dark-theme .auth-card mat-card-subtitle {
-    color: #94a3b8 !important;
+.dark-theme mat-card-subtitle {
+
+    color: #cbd5e1 !important;
+
 }
 
-.dark-theme .auth-navigation-link span {
-    color: #94a3b8 !important;
+/* Badge */
+
+.dark-theme .login-badge {
+
+    background: #1d4ed8;
+
+    color: white;
+
 }
 
-/* -------------------------------------------------------------------
-   Exhaustive Angular Material Outlined Form Field Visibility Overrides
-   ------------------------------------------------------------------- */
-/* 1. Core Wrapper Background */
-.dark-theme ::v-deep .mat-mdc-text-field-wrapper {
-    background-color: #161f38 !important;
+/* ==========================================================
+   MATERIAL FORM FIELDS
+========================================================== */
+
+.dark-theme .mat-mdc-form-field {
+
+    width: 100%;
+
+    --mdc-outlined-text-field-container-color: #1f2937;
+
+    --mdc-outlined-text-field-input-text-color: #ffffff;
+
+    --mdc-outlined-text-field-label-text-color: #d1d5db;
+
+    --mdc-outlined-text-field-focus-label-text-color: #60a5fa;
+
+    --mdc-outlined-text-field-outline-color: #64748b;
+
+    --mdc-outlined-text-field-hover-outline-color: #60a5fa;
+
+    --mdc-outlined-text-field-focus-outline-color: #3b82f6;
+
+    --mat-form-field-focus-select-arrow-color: #ffffff;
+
 }
 
-/* 2. Text typed inside the inputs */
-.dark-theme ::v-deep .mat-mdc-input-element {
-    color: #ffffff !important;
-    caret-color: #38bdf8 !important;
+/* Input */
+
+.dark-theme input {
+
+    color: white !important;
+
+    -webkit-text-fill-color: white !important;
+
+    caret-color: #60a5fa;
+
 }
 
-/* 3. Static Labels & Floating Input Titles */
-.dark-theme ::v-deep .mat-mdc-form-field-label,
-.dark-theme ::v-deep .mdc-floating-label,
-.dark-theme ::v-deep .mdc-floating-label span {
-    color: #94a3b8 !important;
+/* Placeholder */
+
+.dark-theme input::placeholder {
+
+    color: #94a3b8;
+
 }
 
-/* 4. Active focused floating labels */
-.dark-theme ::v-deep .mat-mdc-form-field.mat-focused .mdc-floating-label {
-    color: #38bdf8 !important;
+/* Icons */
+
+.dark-theme mat-icon {
+
+    color: #e2e8f0 !important;
+
 }
 
-/* 5. Suffix modification controls icons (visibility icons, user icons) */
-.dark-theme ::v-deep .mat-mdc-form-field-icon-suffix mat-icon,
-.dark-theme ::v-deep button[matSuffix] mat-icon {
-    color: #38bdf8 !important;
+.dark-theme button mat-icon {
+
+    color: #e2e8f0 !important;
+
 }
 
-/* 6. Form Outline borders state rules */
-.dark-theme ::v-deep .mdc-notched-outline__leading,
-.dark-theme ::v-deep .mdc-notched-outline__notch,
-.dark-theme ::v-deep .mdc-not-data-cell,
-.dark-theme ::v-deep .mat-mdc-form-field-outline,
-.dark-theme ::v-deep .mdc-outlined-text-field-container,
-.dark-theme ::v-deep .mat-mdc-text-field-wrapper:not(.mat-form-field-disabled) .mat-mdc-form-field-outline {
-    border-color: #1e293b !important;
+/* Label */
+
+.dark-theme .mdc-floating-label {
+
+    color: #cbd5e1 !important;
+
 }
 
-/* 7. Focused Form borders glow fields overrides */
-.dark-theme ::v-deep .mat-mdc-form-field.mat-focused .mat-mdc-text-field-wrapper .mdc-notched-outline * {
-    border-color: #4f46e5 !important;
+/* Errors */
+
+.dark-theme .mat-mdc-form-field-error {
+
+    color: #fca5a5;
+
 }
 
-/* Badge Layout Adjustments */
+/* Navigation */
+
+.dark-theme .auth-navigation-link {
+
+    color: #cbd5e1;
+
+}
+
+.dark-theme .auth-navigation-link button {
+
+    color: #60a5fa;
+
+}
+
+.signup-page-root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.signup-badge {
+
+    background: #dcfce7;
+
+    color: #16a34a;
+
+}
+
 .dark-theme .signup-badge {
-    background-color: rgba(2, 132, 199, 0.2) !important;
-    color: #38bdf8 !important;
-    border: 1px solid #0284c7;
+
+    background: #059669;
+
+    color: white;
+
 }

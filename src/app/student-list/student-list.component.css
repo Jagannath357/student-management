@@ -184,78 +184,152 @@ table {
     opacity: 0.8;
 }
 
-/* ===================================================================
-   High-Contrast Colorful Cybersecurity Theme Configuration OVERRIDES
-   =================================================================== */
+/* ==============================================================
+   IMPROVED DARK THEME
+==============================================================*/
+
 .dark-theme {
-    background: linear-gradient(135deg, #090d16 0%, #0f1424 100%) !important;
-    color: #f1f5f9 !important;
+    background: #1B2430;
+    color: #ffffff;
 }
 
+/* Navbar */
+
 .dark-theme .system-navbar {
-    background-color: #0d1222 !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+    background: #27374D !important;
+    color: #fff;
 }
+
+.dark-theme .system-navbar button,
+.dark-theme .system-navbar mat-icon,
+.dark-theme .system-navbar span {
+    color: white !important;
+}
+
+/* Header */
 
 .dark-theme .student-header h1 {
     color: #ffffff;
 }
 
 .dark-theme .student-header p {
-    color: #94a3b8;
+    color: #d1d5db;
 }
 
-/* Structural Angular Material Context Field Forms overrides for dark display mode mapping */
-.dark-theme ::v-deep .mat-mdc-text-field-wrapper {
-    background-color: #161f38 !important;
+/* Search Box */
+
+.dark-theme .mat-mdc-form-field {
+    width: 100%;
 }
 
-.dark-theme ::v-deep .mat-mdc-form-field-label {
-    color: #94a3b8 !important;
+.dark-theme .mat-mdc-text-field-wrapper {
+    background: #34495E !important;
+    border-radius: 8px;
 }
 
-.dark-theme ::v-deep .mat-mdc-input-element {
-    color: #ffffff !important;
+.dark-theme .mat-mdc-input-element {
+    color: #fff !important;
 }
 
-/* High-Contrast Colorful Table Rows adjustments */
+.dark-theme input {
+    color: white !important;
+}
+
+.dark-theme textarea {
+    color: white !important;
+}
+
+.dark-theme .mdc-floating-label {
+    color: #dcdcdc !important;
+}
+
+.dark-theme .mat-mdc-form-field-icon-suffix {
+    color: white !important;
+}
+
+/* Table */
+
 .dark-theme .table-container {
-    background: #111827 !important;
-    border: 1px solid #1e293b;
+    background: #27374D;
+    border: 1px solid #46586d;
+}
+
+.dark-theme table {
+    background: #27374D;
+}
+
+.dark-theme .mat-mdc-header-row {
+    background: #34495E;
 }
 
 .dark-theme .mat-mdc-header-cell {
-    background-color: #1f2937 !important;
-    color: #818cf8 !important;
-    border-bottom: 2px solid #3f51b5 !important;
+    background: #34495E !important;
+    color: #ffffff !important;
+}
+
+.dark-theme .mat-mdc-row {
+    background: #27374D;
 }
 
 .dark-theme .mat-mdc-cell {
-    color: #e2e8f0;
-    border-bottom: 1px solid #1e293b;
+    color: #f1f5f9 !important;
 }
 
 .dark-theme .table-row:hover {
-    background-color: #1f2937;
+    background: #34495E;
 }
 
 .dark-theme .font-semibold {
-    color: #818cf8;
+    color: #ffffff;
 }
 
-/* Deep Indigo-Neon Badge Treatment rules context mapping */
+/* Badge */
+
 .dark-theme .badge-course {
-    background-color: rgba(79, 70, 229, 0.2);
-    color: #818cf8;
-    border: 1px solid #4f46e5;
+    background: #1565c0;
+    color: white;
 }
+
+/* Paginator */
 
 .dark-theme .mat-mdc-paginator {
-    background-color: #111827 !important;
-    color: #94a3b8 !important;
+    background: #27374D !important;
+    color: white !important;
 }
 
+.dark-theme .mat-mdc-paginator * {
+    color: white !important;
+}
+
+/* Footer */
+
 .dark-theme .system-footer {
-    background-color: #060911;
-    border-top: 1px solid #1e293b;
+    background: #111827;
+    color: #d1d5db;
+}
+
+.dark-theme .footer-links a {
+    color: #fff;
+}
+
+/* Buttons */
+
+.dark-theme button {
+    color: white;
+}
+
+/* Material Icons */
+
+.dark-theme mat-icon {
+    color: inherit;
+}
+
+/* No Data */
+
+.dark-theme .no-data-cell {
+    color: #ddd;
+}
+
+.dark-theme .no-data-icon {
+    color: #fff;
 }

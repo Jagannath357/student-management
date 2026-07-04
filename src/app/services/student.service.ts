@@ -18,7 +18,8 @@ export interface Student {
 })
 export class StudentService {
   // Target URL matching your backend server port 8090 setup
-  private apiUrl = 'http://localhost:8090/api/students';
+  private apiUrl =
+    'https://student-management-backend-rh0k.onrender.com/api/students';
 
   constructor(private http: HttpClient) {}
 

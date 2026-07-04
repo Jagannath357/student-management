@@ -66,6 +66,7 @@ import { CourseService, Course } from '../services/course.service';
           color="primary"
           [disabled]="courseForm.invalid"
           (click)="onSave()"
+          class="save-btn"
         >
           Save Configuration
         </button>
@@ -74,48 +75,41 @@ import { CourseService, Course } from '../services/course.service';
   `,
   styles: [
     `
+      .dialog-dark-wrapper {
+        background: #27374d;
+        color: white;
+      }
+
+      .form-title {
+        color: white;
+      }
+
       .dialog-form-layout {
         display: flex;
         flex-direction: column;
-        gap: 12px;
-        padding-top: 16px !important;
+        gap: 18px;
       }
+
       .full-width {
         width: 100%;
       }
+
       .form-row {
         display: flex;
-        gap: 16px;
+        gap: 18px;
       }
+
       .form-row mat-form-field {
         flex: 1;
       }
 
-      /* Dark Theme Dialogue Overrides styling maps */
-      .dialog-dark-wrapper {
-        background-color: #111827;
-        color: #f1f5f9;
-        margin: -24px;
-        padding: 24px;
-        border-radius: 4px;
+      .cancel-btn {
+        color: white;
+        background-color: #27374d;
       }
-      .dialog-dark-wrapper .form-title {
-        color: #ffffff;
-      }
-      .dialog-dark-wrapper ::v-deep .mat-mdc-text-field-wrapper {
-        background-color: #161f38 !important;
-      }
-      .dialog-dark-wrapper ::v-deep .mat-mdc-form-field-label {
-        color: #94a3b8 !important;
-      }
-      .dialog-dark-wrapper ::v-deep .mat-mdc-input-element {
-        color: #ffffff !important;
-      }
-      .dialog-dark-wrapper ::v-deep .mat-mdc-select-value {
-        color: #ffffff !important;
-      }
-      .dialog-dark-wrapper .cancel-btn {
-        color: #94a3b8;
+      .save-btn {
+        color: white;
+        background-color: #09489f;
       }
     `,
   ],

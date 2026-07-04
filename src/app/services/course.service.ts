@@ -15,7 +15,8 @@ export interface Course {
 })
 export class CourseService {
   // Target URL pointing directly to your Spring Boot Backend Controller
-  private apiUrl = 'http://localhost:8090/api/courses';
+  private apiUrl =
+    'https://student-management-backend-rh0k.onrender.com/api/courses';
 
   constructor(private http: HttpClient) {}
 
